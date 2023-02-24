@@ -1,91 +1,20 @@
-let pageSlider = new Swiper('.page',{
-    wrapperClass: 'page__wrapper',
-    slideClass: 'page__screen',
-    direction: 'vertical',
-    slidesPerView:'auto',
-    parallax:true,
-    observer: true,
-    observerParents: true,
-    observerSlideChildren: true,
-    mousewheel:{
-        sensitivity:5,
-    },
-    init:true,
-    grabCursor:false,
-    init:false,
-    on:{
-        init:function(){
-            menuSlider()
-            setScrollType()
-        },
-        slideChange:function(){
-            menuSliderRemove()
-            menuLinks[pageSlider.realIndex].classList.add('_active')
-        }
+
+window.addEventListener('scroll', e => {
+    document.body.style.cssText = `--scrollTop: -${this.scrollY}px`
+    let scrollYmob = this.scrollY
+    if(scrollY > 120){
+        document.querySelector('.main').classList.add('opacity')
+        
+    } else {
+        document.querySelector('.main').classList.remove('opacity')
     }
+    if(scrollY > 300){
+        document.documentElement.classList.add('active')
+    }else {
+        console.log('1')
+        document.documentElement.classList.remove('active')
+    } 
 })
-
-
-
-let wrapper = document.querySelector('.wrapper')
-
-function setScrollType() {
-    let wrapper = document.querySelector('.wrapper')
-    if(wrapper.classList.contains('_free')){
-        wrapper.classList.remove('_free')
-        pageSlider.params.freeMode = false
-    }
-    for (let index = 0; index < pageSlider.slides.length; index++) {
-        const pageSlide = pageSlider.slides[index];
-        const pageSlideContent = pageSlide.querySelector('.screen__content')
-        if(pageSlideContent){
-            const pageSlideContentHeight = pageSlideContent.offsetHeight
-            if(pageSlideContentHeight> window.innerHeight){
-                wrapper.classList.add('_free')
-                pageSlider.params.freeMode = true
-                break
-            }
-        }
-    }
-}
-
-
-
-
-
-
-
-function menuSlider(){
-    const secondSlides = document.querySelector('.menu__link')
-    let index = 0
-    secondSlides.addEventListener('click',(e)=>{
-        index += 1
-        pageSlider.slideTo(index,800)
-        e.preventDefault()
-    })
-    const menuLinks = document.querySelectorAll('.menu__up')
-    if(menuLinks.length>0){
-        menuLinks[pageSlider.realIndex].classList.add('_active')
-        for(let index = 0; index < menuLinks.length; index++){
-            menuSliderRemove()
-            const menuLink = menuLinks[index]
-            menuLink.addEventListener('click',(e)=>{
-                pageSlider.slideTo(index,800)
-                menuLink.classList.add('_active')
-                e.preventDefault()
-            })
-        }
-    }
-}
-
-function menuSliderRemove(params) {
-    let menuLinkActive = document.querySelector('.menu__link._active')
-
-    if(menuLinkActive){
-        menuLinkActive.classList.remove('_active')
-    }
-}
-
 
 
 var X = 0;
@@ -135,6 +64,33 @@ if(animItems.length > 0){
 
 // BUTTON UP
 
+const btnUp = {
+    addEventListener(){
+        document.querySelector('.arrow-up').onclick = () => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
+
+const btnTwo = {
+    addEventListener(){
+        document.querySelector('.circle-cursor').onclick = () => {
+            console.log('1')
+            window.scrollTo({
+                top: 400,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+}
+btnUp.addEventListener()
+
+btnTwo.addEventListener()
 
 // RANGE INPUT
 
@@ -196,6 +152,19 @@ const swiperCard = new Swiper('.card-slider',{
         disableOnInteraction: false,
         pauseOnMouseEnter: false,
     },
+    breakpoints:{
+        1082: {
+            slidesPerView:4.5,
+            speed:7000,
+        },
+        782: {
+            speed:4000,
+        },
+        0: {
+            slidesPerView:2,
+            speed:2000,
+        },
+    }
 });
 
 const swiperProject = new Swiper('.image-slider',{
@@ -233,28 +202,7 @@ const scrollItems = document.querySelectorAll('.scroll');
 
 document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-if(scrollItems.length > 0){
-    window.addEventListener('scroll', headerOnScroll);
-    function headerOnScroll(params){
-        for(let i = 0; i < scrollItems.length; i++){
-            const scrollItem = scrollItems[i];
-            const scrollHeight = scrollItem.offsetHeight;
-            const scrollOffset = offset(scrollItem).top;
-            const scrollStart = 4;
 
-            let scrollItemPoint = window.innerHeight - scrollHeight / scrollStart;
-            if(scrollHeight > window.innerHeight){
-                scrollItemPoint = window.innerHeight - scrollHeight / scrollStart;
-            }
-
-            if((pageYOffset >= scrollOffset - scrollItemPoint) && pageYOffset <= (scrollOffset+scrollHeight)){
-                document.documentElement.classList.remove('active')
-            } else {
-                document.documentElement.classList.add('active')
-            }
-        }
-    }
-}
 
 function offset(el){
     const rect=el.getBoundingClientRect(),
@@ -262,5 +210,3 @@ function offset(el){
         scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
 }
-
-pageSlider.init()
