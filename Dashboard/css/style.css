@@ -492,6 +492,20 @@ th{
     min-width: 100px;
 }
 
+tr{
+    position: relative;
+}
+
+tr::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #EEEEEE;
+    left: 0;
+    bottom: 0;
+}
+
 tr>th{
     padding-bottom: 14px;
 }
