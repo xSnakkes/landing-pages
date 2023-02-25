@@ -111,6 +111,15 @@ body{
     filter: brightness(2);
 }
 
+.header__item.active{
+    background-color: #5932EA;
+    border-radius: 8px;
+    color: #fff;
+}
+.header__item.active:hover{
+    filter: brightness(2);
+}
+
 .header__user{
     display: flex;
     flex-direction: row;
