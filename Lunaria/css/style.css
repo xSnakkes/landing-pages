@@ -12,7 +12,7 @@
 /* PARALLAX */
 
 .list{
-    transform: translate3d(0, calc(var(--scrollTop)),0);
+    transform: translate3d(0, calc(var(--scrollTop)/10),0);
 }
 .card,
 .about,
@@ -21,7 +21,7 @@
 .contact,
 .footer{
     background-color: #000;
-    transform: translate3d(0, calc(var(--scrollTop)),0);
+    transform: translate3d(0, calc(var(--scrollTop)/10),0);
 }
 
 
@@ -1552,6 +1552,10 @@ button:active{
 
 
 /* FOOTER */
+
+footer{
+    padding-bottom: 300px;
+}
 
 .footer__items{
     display: flex;

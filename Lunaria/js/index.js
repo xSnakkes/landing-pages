@@ -81,7 +81,7 @@ const btnTwo = {
         document.querySelector('.circle-cursor').onclick = () => {
             console.log('1')
             window.scrollTo({
-                top: 400,
+                top: 700,
                 left: 0,
                 behavior: 'smooth'
             });
