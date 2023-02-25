@@ -120,6 +120,7 @@ body{
     filter: brightness(2);
 }
 
+
 .header__user{
     display: flex;
     flex-direction: row;
