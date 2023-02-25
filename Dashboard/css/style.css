@@ -14,6 +14,7 @@ body{
     justify-content: start;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .page{
@@ -570,10 +571,6 @@ td{
 }
 
 @media (max-width: 598.98px){
-    .input__container{
-        max-width: 116px;
-        width: 100%;
-    }
     .customers__header-wrapper{
         flex-direction: column;
     }
