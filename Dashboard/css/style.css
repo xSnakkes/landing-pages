@@ -296,10 +296,14 @@ body{
         top: -85%;
         right: 100px;
     }
+    .burger__logo-text::after{
+        right: -20px;
+    }
     .header__nav{
         position: absolute;
         left: 0;
         width: 100%;
+        height: 100%;
         top: -220%;
         display: flex;
         flex-direction: column;

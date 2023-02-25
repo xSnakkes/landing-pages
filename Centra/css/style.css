@@ -273,6 +273,13 @@ body{
 
 .slider__swiper{
     min-width: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper__container{
+    width: 100%;
+    height: 100%;
 }
 
 /*  */
@@ -311,6 +318,9 @@ body{
     }
     .main {
         padding-top: 80px;
+    }
+    .main__container{
+        flex-direction: column;
     }
 }
 
@@ -553,8 +563,12 @@ body{
     height: 850px;
 }
 
+.features{
+    padding-bottom: 100px;
+}
+
 .community{
-    background-color: #fff;
+    background-color: #f8f6f1;
     position: relative;
     height: 100%;
 }
@@ -682,4 +696,124 @@ body{
         flex-direction: column;
 
     }
+}
+
+
+/* ANIMATION */
+
+.cookies{
+    opacity: 0;
+    transition-duration: .6s;
+}
+
+.cookies._active{
+    opacity: 1;
+    transition-duration: .6s;
+}
+
+.main{
+    opacity: 0;
+    transition-duration: .6s;
+    transform: translate(0px, -10%);
+}
+
+.main._active{
+    opacity: 1;
+    transition-duration: .6s;
+    transform: translate(0px,0px);
+}
+
+.partner{
+    opacity: 0;
+    transition-duration: .6s;
+    transform: translate(0px, -10%);
+}
+
+.partner._active{
+    opacity: 1;
+    transition-duration: .6s;
+    transform: translate(0px,0px);
+}
+
+.hype{
+    opacity: 0;
+    transition-duration: 1.9s;
+}
+
+.hype._active{
+    opacity: 1;
+    transition-duration: 1.9s;
+}
+
+.sell__item-header{
+    opacity: 0;
+    transition-duration: .6s;
+    transform: translate(-10%, 0px);
+}
+
+.sell__item-header._active{
+    opacity: 1;
+    transition-duration: .6s;
+    transform: translate(0px,0px);
+}
+
+.item-text{
+    opacity: 0;
+    transition-duration: .6s;
+    transform: translate(-10%, 0px);
+}
+
+.item-text._active{
+    opacity: 1;
+    transition-duration: .6s;
+    transform: translate(0px,0px);
+}
+
+.sell__item{
+    opacity: 0;
+    transition-duration: .6s;
+    transform: translate(10%, 0px);
+}
+
+.sell__item._active{
+    opacity: 1;
+    transition-duration: .6s;
+    transform: translate(0px,0px);
+}
+
+
+.sell__list{
+    opacity: 0;
+    transition-duration: .6s;
+    transform: translate(10%, 0px);
+}
+
+.sell__list._active{
+    opacity: 1;
+    transition-duration: .6s;
+    transform: translate(0px,0px);
+}
+
+.features__item-text{
+    opacity: 0;
+    transition-duration: .6s;
+    transform: translate(10%, 0px);
+}
+
+.features__item-text._active{
+    opacity: 1;
+    transition-duration: .6s;
+    transform: translate(0px,0px);
+}
+
+.features__item-img{
+    opacity: 0;
+    transition-duration: .6s;
+    transform: translate(-10%, 0px);
+}
+
+.features__item-img._active{
+    opacity: 1;
+    transition-duration: .6s;
+    transform: translate(0px,0px);
 }
