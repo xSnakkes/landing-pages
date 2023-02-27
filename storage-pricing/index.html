@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1>Test Task by Daniil Petrushenko</h1>
+        </header>
+        <main class="page">
+            <div class="page__container">
+                <div class="page__wrapper">
+                    <div class="page__input">
+                        <div class="page__input-storage">
+                            <div class="page__input-label">
+                                <label for="storage">STORAGE</label>
+                                <label id="storage-label" for="storage">0</label>
+                            </div>
+                            <input type="range" name="storage" id="storage" min="0" max="1000" step="1" value="0">
+                        </div>
+                        <div class="page__input-transfer">
+                            <div class="page__input-label">
+                                <label for="storage">TRANSFER</label>
+                                <label id="transfer-label" for="storage">0</label>
+                            </div>
+                            <input type="range" name="transfer" id="transfer" min="0" max="1000" step="1" value="0">
+                        </div>
+                    </div>
+                    <div class="page__output">
+                        <div class="page__output-company">
+                            <div class="company__item">
+                                <div class="company__item-header">
+                                    <div class="company__item-name">
+                                        backblaze
+                                    </div>
+                                    <div class="company__item-logo">
+                                        <img src="src/01.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="company__item">
+                                <div class="company__item-header">
+                                    <div class="company__item-name">
+                                        bunny
+                                    </div>
+                                    <div class="company__item-logo">
+                                        <img src="src/02.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="company__item-radio">
+                                    <input name="r1" id="r11" type="radio" value="" checked> HDD
+                                    <input name="r1" id="r12" type="radio" value=""> SSD
+                                </div>
+                            </div>
+                            <div class="company__item">
+                                <div class="company__item-header">
+                                    <div class="company__item-name">
+                                        scaleway
+                                    </div>
+                                    <div class="company__item-logo">
+                                        <img src="src/03.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="company__item-radio">
+                                    <input name="r2" id="r21" type="radio" value="" checked> Multi
+                                    <input name="r2" id="r22" type="radio" value=""> Single
+                                </div>
+                            </div>
+                            <div class="company__item">
+                                <div class="company__item-header">
+                                    <div class="company__item-name">
+                                        vultr
+                                    </div>
+                                    <div class="company__item-logo">
+                                        <img src="src/04.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page__output-graph">
+                            <div class="graph__item">
+                                <div class="backblaze_graph graph"></div>
+                                <div class="backblaze_price price">0</div>
+                            </div>
+                            <div class="graph__item">
+                                <div class="bunny_graph graph"></div>
+                                <div class="bunny_price price">0</div>
+                            </div>
+                            <div class="graph__item">
+                                <div class="scaleway_graph graph"></div>
+                                <div class="scaleway_price price">0</div>
+                            </div>
+                            <div class="graph__item">
+                                <div class="vultr_graph graph"></div>
+                                <div class="vultr_price price">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            1
+        </footer>
+    </div>
+    <script src="app/main.js"></script>
+</body>
+
+</html>
